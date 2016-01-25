@@ -10,12 +10,15 @@
 #import "KCGNote.h"
 #import "KCGPhoto.h"
 
+@import CoreImage;
+
 @interface KCGPhotoViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
 @property (nonatomic) BOOL shouldSaveImageToModel;
 @property (nonatomic, strong) KCGNote *model;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *deleteButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *applyFilterButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 
 @end
 
@@ -51,6 +54,8 @@
     }
     
     self.deleteButton.enabled = self.shouldSaveImageToModel;
+    self.applyFilterButton.enabled = self.shouldSaveImageToModel;
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -96,7 +101,43 @@
 
 - (IBAction)applyFilter:(id)sender {
     
+    // Create context
+    CIContext *context = [CIContext contextWithOptions:nil];
     
+    // Create CIImage
+    CIImage *image = [CIImage imageWithCGImage:self.model.photo.image.CGImage];
+    
+    // Create Filters
+    CIFilter *old = [CIFilter filterWithName:@"CIFalseColor"];
+    [old setDefaults];
+    [old setValue:image forKeyPath:kCIInputImageKey];
+    
+    CIFilter *vignette = [CIFilter filterWithName:@"CIVignette"];
+    [vignette setDefaults];
+    [vignette setValue:@11 forKeyPath:kCIInputIntensityKey];
+    
+    // Concatenation
+    [vignette setValue:old.outputImage forKey:kCIInputImageKey];
+    
+    // Obtain output image
+    CIImage *output = vignette.outputImage;
+    
+    // Apply filter
+    [self.activityView startAnimating];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        CGImageRef res = [context createCGImage:output fromRect:[output extent]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // Save new image
+            UIImage *img = [UIImage imageWithCGImage:res];
+            [self.activityView stopAnimating];
+            self.photoView.image = img;
+            
+            // Free CGImageRef
+            CGImageRelease(res);
+        });
+    });
 }
 
 - (IBAction)delete:(id)sender {
@@ -112,7 +153,7 @@
                          // La eliminamos del modelo
                          self.model.photo.image = nil;
                          //Eliminamos de la vista
-                         self.photoView.image = [UIImage imageNamed:@"no-image-available.png"];
+                         self.photoView.image = nil; // [UIImage imageNamed:@"no-image-available.png"];
                          
                          // Actualizamos el estado de los botones
                          self.deleteButton.enabled = NO;

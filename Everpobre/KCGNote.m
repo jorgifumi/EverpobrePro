@@ -39,8 +39,9 @@
 - (void)awakeFromInsert{
     [super awakeFromInsert];
     // Se llama solo una vez
+    [self setupKVO];
     
-    //[self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager requestWhenInUseAuthorization];
     
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     if ((status == kCLAuthorizationStatusAuthorizedWhenInUse) || (status == kCLAuthorizationStatusNotDetermined)) {
