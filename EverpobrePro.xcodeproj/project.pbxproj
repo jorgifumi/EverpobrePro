@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		681DC0EA1C51876A00E9A371 /* KCGNotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 681DC0E91C51876A00E9A371 /* KCGNotesTableViewController.m */; };
+		681DC0EE1C51949600E9A371 /* KCGNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 681DC0EC1C51949600E9A371 /* KCGNoteViewController.m */; };
+		681DC0EF1C51949600E9A371 /* KCGNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 681DC0ED1C51949600E9A371 /* KCGNoteViewController.xib */; };
+		681DC1211C52CBD700E9A371 /* KCGPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 681DC11F1C52CBD700E9A371 /* KCGPhotoViewController.m */; };
+		681DC1221C52CBD700E9A371 /* KCGPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 681DC1201C52CBD700E9A371 /* KCGPhotoViewController.xib */; };
+		681DC1241C52CE2200E9A371 /* no-image-available.png in Resources */ = {isa = PBXBuildFile; fileRef = 681DC1231C52CE2200E9A371 /* no-image-available.png */; };
+		681DC1281C52F06E00E9A371 /* _KCGLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 681DC1271C52F06E00E9A371 /* _KCGLocation.m */; };
+		681DC12B1C52F07B00E9A371 /* KCGLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 681DC12A1C52F07B00E9A371 /* KCGLocation.m */; };
+		682BAE771C4D9FB900B97A3D /* AGTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682BAE761C4D9FB900B97A3D /* AGTCoreDataTableViewController.m */; };
+		682BAE7B1C4DA0E700B97A3D /* KCGNotebooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682BAE7A1C4DA0E700B97A3D /* KCGNotebooksViewController.m */; };
+		682BAE7F1C4DAA0E00B97A3D /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 682BAE7E1C4DAA0E00B97A3D /* UIViewController+Navigation.m */; };
+		6852320E1C483A210007C484 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6852320D1C483A210007C484 /* main.m */; };
+		685232111C483A210007C484 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 685232101C483A210007C484 /* AppDelegate.m */; };
+		685232141C483A210007C484 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 685232131C483A210007C484 /* ViewController.m */; };
+		685232191C483A210007C484 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685232181C483A210007C484 /* Assets.xcassets */; };
+		6852321C1C483A210007C484 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6852321A1C483A210007C484 /* LaunchScreen.storyboard */; };
+		685232261C483ACF0007C484 /* AGTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 685232251C483ACF0007C484 /* AGTCoreDataStack.m */; };
+		685232291C4840DE0007C484 /* Everpobre.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 685232271C4840DE0007C484 /* Everpobre.xcdatamodeld */; };
+		685232361C485C100007C484 /* _KCGNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 6852322B1C485C100007C484 /* _KCGNote.m */; };
+		685232371C485C100007C484 /* _KCGNotebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 6852322D1C485C100007C484 /* _KCGNotebook.m */; };
+		685232381C485C100007C484 /* _KCGPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6852322F1C485C100007C484 /* _KCGPhoto.m */; };
+		685232391C485C100007C484 /* KCGNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 685232311C485C100007C484 /* KCGNote.m */; };
+		6852323A1C485C100007C484 /* KCGNotebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 685232331C485C100007C484 /* KCGNotebook.m */; };
+		6852323B1C485C100007C484 /* KCGPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 685232351C485C100007C484 /* KCGPhoto.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		681DC0E71C51783000E9A371 /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		681DC0E81C51876A00E9A371 /* KCGNotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCGNotesTableViewController.h; sourceTree = "<group>"; };
+		681DC0E91C51876A00E9A371 /* KCGNotesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCGNotesTableViewController.m; sourceTree = "<group>"; };
+		681DC0EB1C51949600E9A371 /* KCGNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCGNoteViewController.h; sourceTree = "<group>"; };
+		681DC0EC1C51949600E9A371 /* KCGNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCGNoteViewController.m; sourceTree = "<group>"; };
+		681DC0ED1C51949600E9A371 /* KCGNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KCGNoteViewController.xib; sourceTree = "<group>"; };
+		681DC11E1C52CBD700E9A371 /* KCGPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCGPhotoViewController.h; sourceTree = "<group>"; };
+		681DC11F1C52CBD700E9A371 /* KCGPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCGPhotoViewController.m; sourceTree = "<group>"; };
+		681DC1201C52CBD700E9A371 /* KCGPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KCGPhotoViewController.xib; sourceTree = "<group>"; };
+		681DC1231C52CE2200E9A371 /* no-image-available.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-image-available.png"; sourceTree = "<group>"; };
+		681DC1251C52EDFC00E9A371 /* Everpobre2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Everpobre2.xcdatamodel; sourceTree = "<group>"; };
+		681DC1261C52F06E00E9A371 /* _KCGLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _KCGLocation.h; sourceTree = "<group>"; };
+		681DC1271C52F06E00E9A371 /* _KCGLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _KCGLocation.m; sourceTree = "<group>"; };
+		681DC1291C52F07B00E9A371 /* KCGLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCGLocation.h; sourceTree = "<group>"; };
+		681DC12A1C52F07B00E9A371 /* KCGLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCGLocation.m; sourceTree = "<group>"; };
+		682BAE751C4D9FB900B97A3D /* AGTCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataTableViewController.h; sourceTree = "<group>"; };
+		682BAE761C4D9FB900B97A3D /* AGTCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataTableViewController.m; sourceTree = "<group>"; };
+		682BAE791C4DA0E700B97A3D /* KCGNotebooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCGNotebooksViewController.h; sourceTree = "<group>"; };
+		682BAE7A1C4DA0E700B97A3D /* KCGNotebooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCGNotebooksViewController.m; sourceTree = "<group>"; };
+		682BAE7D1C4DAA0E00B97A3D /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
+		682BAE7E1C4DAA0E00B97A3D /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
+		685232091C483A210007C484 /* EverpobrePro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverpobrePro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6852320D1C483A210007C484 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6852320F1C483A210007C484 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		685232101C483A210007C484 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		685232121C483A210007C484 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		685232131C483A210007C484 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		685232181C483A210007C484 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6852321B1C483A210007C484 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6852321D1C483A210007C484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		685232241C483ACF0007C484 /* AGTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataStack.h; sourceTree = "<group>"; };
+		685232251C483ACF0007C484 /* AGTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataStack.m; sourceTree = "<group>"; };
+		685232281C4840DE0007C484 /* Everpobre.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Everpobre.xcdatamodel; sourceTree = "<group>"; };
+		6852322A1C485C100007C484 /* _KCGNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _KCGNote.h; sourceTree = "<group>"; };
+		6852322B1C485C100007C484 /* _KCGNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _KCGNote.m; sourceTree = "<group>"; };
+		6852322C1C485C100007C484 /* _KCGNotebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _KCGNotebook.h; sourceTree = "<group>"; };
+		6852322D1C485C100007C484 /* _KCGNotebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _KCGNotebook.m; sourceTree = "<group>"; };
+		6852322E1C485C100007C484 /* _KCGPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _KCGPhoto.h; sourceTree = "<group>"; };
+		6852322F1C485C100007C484 /* _KCGPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _KCGPhoto.m; sourceTree = "<group>"; };
+		685232301C485C100007C484 /* KCGNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCGNote.h; sourceTree = "<group>"; };
+		685232311C485C100007C484 /* KCGNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCGNote.m; sourceTree = "<group>"; };
+		685232321C485C100007C484 /* KCGNotebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCGNotebook.h; sourceTree = "<group>"; };
+		685232331C485C100007C484 /* KCGNotebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCGNotebook.m; sourceTree = "<group>"; };
+		685232341C485C100007C484 /* KCGPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCGPhoto.h; sourceTree = "<group>"; };
+		685232351C485C100007C484 /* KCGPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCGPhoto.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		685232061C483A210007C484 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		682BAE781C4D9FC100B97A3D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				682BAE751C4D9FB900B97A3D /* AGTCoreDataTableViewController.h */,
+				682BAE761C4D9FB900B97A3D /* AGTCoreDataTableViewController.m */,
+				682BAE791C4DA0E700B97A3D /* KCGNotebooksViewController.h */,
+				682BAE7A1C4DA0E700B97A3D /* KCGNotebooksViewController.m */,
+				681DC0E81C51876A00E9A371 /* KCGNotesTableViewController.h */,
+				681DC0E91C51876A00E9A371 /* KCGNotesTableViewController.m */,
+				681DC0EB1C51949600E9A371 /* KCGNoteViewController.h */,
+				681DC0EC1C51949600E9A371 /* KCGNoteViewController.m */,
+				681DC0ED1C51949600E9A371 /* KCGNoteViewController.xib */,
+				681DC11E1C52CBD700E9A371 /* KCGPhotoViewController.h */,
+				681DC11F1C52CBD700E9A371 /* KCGPhotoViewController.m */,
+				681DC1201C52CBD700E9A371 /* KCGPhotoViewController.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		682BAE7C1C4DA9CD00B97A3D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				682BAE7D1C4DAA0E00B97A3D /* UIViewController+Navigation.h */,
+				682BAE7E1C4DAA0E00B97A3D /* UIViewController+Navigation.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		685232001C483A210007C484 = {
+			isa = PBXGroup;
+			children = (
+				6852320B1C483A210007C484 /* EverpobrePro */,
+				6852320A1C483A210007C484 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6852320A1C483A210007C484 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				685232091C483A210007C484 /* EverpobrePro.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6852320B1C483A210007C484 /* EverpobrePro */ = {
+			isa = PBXGroup;
+			children = (
+				681DC1231C52CE2200E9A371 /* no-image-available.png */,
+				682BAE7C1C4DA9CD00B97A3D /* Categories */,
+				682BAE781C4D9FC100B97A3D /* Controllers */,
+				685232231C483AA50007C484 /* Models */,
+				6852320F1C483A210007C484 /* AppDelegate.h */,
+				685232101C483A210007C484 /* AppDelegate.m */,
+				685232121C483A210007C484 /* ViewController.h */,
+				685232131C483A210007C484 /* ViewController.m */,
+				685232181C483A210007C484 /* Assets.xcassets */,
+				6852321A1C483A210007C484 /* LaunchScreen.storyboard */,
+				6852321D1C483A210007C484 /* Info.plist */,
+				6852320C1C483A210007C484 /* Supporting Files */,
+				681DC0E71C51783000E9A371 /* Settings.h */,
+			);
+			name = EverpobrePro;
+			path = Everpobre;
+			sourceTree = "<group>";
+		};
+		6852320C1C483A210007C484 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6852320D1C483A210007C484 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		685232231C483AA50007C484 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6852323C1C485C1F0007C484 /* Machine */,
+				6852323D1C485D100007C484 /* Human */,
+				685232241C483ACF0007C484 /* AGTCoreDataStack.h */,
+				685232251C483ACF0007C484 /* AGTCoreDataStack.m */,
+				685232271C4840DE0007C484 /* Everpobre.xcdatamodeld */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6852323C1C485C1F0007C484 /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				681DC1261C52F06E00E9A371 /* _KCGLocation.h */,
+				681DC1271C52F06E00E9A371 /* _KCGLocation.m */,
+				6852322A1C485C100007C484 /* _KCGNote.h */,
+				6852322B1C485C100007C484 /* _KCGNote.m */,
+				6852322C1C485C100007C484 /* _KCGNotebook.h */,
+				6852322D1C485C100007C484 /* _KCGNotebook.m */,
+				6852322E1C485C100007C484 /* _KCGPhoto.h */,
+				6852322F1C485C100007C484 /* _KCGPhoto.m */,
+			);
+			name = Machine;
+			sourceTree = "<group>";
+		};
+		6852323D1C485D100007C484 /* Human */ = {
+			isa = PBXGroup;
+			children = (
+				681DC1291C52F07B00E9A371 /* KCGLocation.h */,
+				681DC12A1C52F07B00E9A371 /* KCGLocation.m */,
+				685232301C485C100007C484 /* KCGNote.h */,
+				685232311C485C100007C484 /* KCGNote.m */,
+				685232321C485C100007C484 /* KCGNotebook.h */,
+				685232331C485C100007C484 /* KCGNotebook.m */,
+				685232341C485C100007C484 /* KCGPhoto.h */,
+				685232351C485C100007C484 /* KCGPhoto.m */,
+			);
+			name = Human;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		685232081C483A210007C484 /* EverpobrePro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 685232201C483A210007C484 /* Build configuration list for PBXNativeTarget "EverpobrePro" */;
+			buildPhases = (
+				685232051C483A210007C484 /* Sources */,
+				685232061C483A210007C484 /* Frameworks */,
+				685232071C483A210007C484 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EverpobrePro;
+			productName = Everpobre;
+			productReference = 685232091C483A210007C484 /* EverpobrePro.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		685232011C483A210007C484 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Jorge Miguel Lucena Pino";
+				TargetAttributes = {
+					685232081C483A210007C484 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = R5A66455JB;
+					};
+				};
+			};
+			buildConfigurationList = 685232041C483A210007C484 /* Build configuration list for PBXProject "EverpobrePro" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 685232001C483A210007C484;
+			productRefGroup = 6852320A1C483A210007C484 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				685232081C483A210007C484 /* EverpobrePro */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		685232071C483A210007C484 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				681DC1241C52CE2200E9A371 /* no-image-available.png in Resources */,
+				6852321C1C483A210007C484 /* LaunchScreen.storyboard in Resources */,
+				681DC1221C52CBD700E9A371 /* KCGPhotoViewController.xib in Resources */,
+				685232191C483A210007C484 /* Assets.xcassets in Resources */,
+				681DC0EF1C51949600E9A371 /* KCGNoteViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		685232051C483A210007C484 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				681DC1281C52F06E00E9A371 /* _KCGLocation.m in Sources */,
+				685232391C485C100007C484 /* KCGNote.m in Sources */,
+				681DC1211C52CBD700E9A371 /* KCGPhotoViewController.m in Sources */,
+				685232141C483A210007C484 /* ViewController.m in Sources */,
+				682BAE771C4D9FB900B97A3D /* AGTCoreDataTableViewController.m in Sources */,
+				682BAE7B1C4DA0E700B97A3D /* KCGNotebooksViewController.m in Sources */,
+				682BAE7F1C4DAA0E00B97A3D /* UIViewController+Navigation.m in Sources */,
+				685232111C483A210007C484 /* AppDelegate.m in Sources */,
+				685232291C4840DE0007C484 /* Everpobre.xcdatamodeld in Sources */,
+				685232371C485C100007C484 /* _KCGNotebook.m in Sources */,
+				685232381C485C100007C484 /* _KCGPhoto.m in Sources */,
+				6852323B1C485C100007C484 /* KCGPhoto.m in Sources */,
+				6852323A1C485C100007C484 /* KCGNotebook.m in Sources */,
+				685232361C485C100007C484 /* _KCGNote.m in Sources */,
+				681DC12B1C52F07B00E9A371 /* KCGLocation.m in Sources */,
+				681DC0EE1C51949600E9A371 /* KCGNoteViewController.m in Sources */,
+				685232261C483ACF0007C484 /* AGTCoreDataStack.m in Sources */,
+				6852320E1C483A210007C484 /* main.m in Sources */,
+				681DC0EA1C51876A00E9A371 /* KCGNotesTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6852321A1C483A210007C484 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6852321B1C483A210007C484 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6852321E1C483A210007C484 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6852321F1C483A210007C484 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		685232211C483A210007C484 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Everpobre/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jf.EverpobrePro;
+				PRODUCT_NAME = EverpobrePro;
+			};
+			name = Debug;
+		};
+		685232221C483A210007C484 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Everpobre/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jf.EverpobrePro;
+				PRODUCT_NAME = EverpobrePro;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		685232041C483A210007C484 /* Build configuration list for PBXProject "EverpobrePro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6852321E1C483A210007C484 /* Debug */,
+				6852321F1C483A210007C484 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		685232201C483A210007C484 /* Build configuration list for PBXNativeTarget "EverpobrePro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				685232211C483A210007C484 /* Debug */,
+				685232221C483A210007C484 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		685232271C4840DE0007C484 /* Everpobre.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				681DC1251C52EDFC00E9A371 /* Everpobre2.xcdatamodel */,
+				685232281C4840DE0007C484 /* Everpobre.xcdatamodel */,
+			);
+			currentVersion = 681DC1251C52EDFC00E9A371 /* Everpobre2.xcdatamodel */;
+			path = Everpobre.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 685232011C483A210007C484 /* Project object */;
+}
