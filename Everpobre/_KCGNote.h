@@ -5,7 +5,7 @@
 
 extern const struct KCGNoteAttributes {
 	__unsafe_unretained NSString *creationDate;
-	__unsafe_unretained NSString *modificationDte;
+	__unsafe_unretained NSString *modificationDate;
 	__unsafe_unretained NSString *name;
 	__unsafe_unretained NSString *text;
 } KCGNoteAttributes;
@@ -33,9 +33,9 @@ extern const struct KCGNoteRelationships {
 
 //- (BOOL)validateCreationDate:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSDate* modificationDte;
+@property (nonatomic, strong) NSDate* modificationDate;
 
-//- (BOOL)validateModificationDte:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateModificationDate:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSString* name;
 
@@ -64,8 +64,8 @@ extern const struct KCGNoteRelationships {
 - (NSDate*)primitiveCreationDate;
 - (void)setPrimitiveCreationDate:(NSDate*)value;
 
-- (NSDate*)primitiveModificationDte;
-- (void)setPrimitiveModificationDte:(NSDate*)value;
+- (NSDate*)primitiveModificationDate;
+- (void)setPrimitiveModificationDate:(NSDate*)value;
 
 - (NSString*)primitiveName;
 - (void)setPrimitiveName:(NSString*)value;

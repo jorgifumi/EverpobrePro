@@ -5,8 +5,8 @@
 
 const struct KCGLocationAttributes KCGLocationAttributes = {
 	.address = @"address",
-	.latitud = @"latitud",
-	.longitud = @"longitud",
+	.latitude = @"latitude",
+	.longitude = @"longitude",
 };
 
 const struct KCGLocationRelationships KCGLocationRelationships = {
@@ -39,13 +39,13 @@ const struct KCGLocationRelationships KCGLocationRelationships = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 
-	if ([key isEqualToString:@"latitudValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"latitud"];
+	if ([key isEqualToString:@"latitudeValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"latitude"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
-	if ([key isEqualToString:@"longitudValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"longitud"];
+	if ([key isEqualToString:@"longitudeValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"longitude"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -55,44 +55,44 @@ const struct KCGLocationRelationships KCGLocationRelationships = {
 
 @dynamic address;
 
-@dynamic latitud;
+@dynamic latitude;
 
-- (double)latitudValue {
-	NSNumber *result = [self latitud];
+- (double)latitudeValue {
+	NSNumber *result = [self latitude];
 	return [result doubleValue];
 }
 
-- (void)setLatitudValue:(double)value_ {
-	[self setLatitud:@(value_)];
+- (void)setLatitudeValue:(double)value_ {
+	[self setLatitude:@(value_)];
 }
 
-- (double)primitiveLatitudValue {
-	NSNumber *result = [self primitiveLatitud];
+- (double)primitiveLatitudeValue {
+	NSNumber *result = [self primitiveLatitude];
 	return [result doubleValue];
 }
 
-- (void)setPrimitiveLatitudValue:(double)value_ {
-	[self setPrimitiveLatitud:@(value_)];
+- (void)setPrimitiveLatitudeValue:(double)value_ {
+	[self setPrimitiveLatitude:@(value_)];
 }
 
-@dynamic longitud;
+@dynamic longitude;
 
-- (double)longitudValue {
-	NSNumber *result = [self longitud];
+- (double)longitudeValue {
+	NSNumber *result = [self longitude];
 	return [result doubleValue];
 }
 
-- (void)setLongitudValue:(double)value_ {
-	[self setLongitud:@(value_)];
+- (void)setLongitudeValue:(double)value_ {
+	[self setLongitude:@(value_)];
 }
 
-- (double)primitiveLongitudValue {
-	NSNumber *result = [self primitiveLongitud];
+- (double)primitiveLongitudeValue {
+	NSNumber *result = [self primitiveLongitude];
 	return [result doubleValue];
 }
 
-- (void)setPrimitiveLongitudValue:(double)value_ {
-	[self setPrimitiveLongitud:@(value_)];
+- (void)setPrimitiveLongitudeValue:(double)value_ {
+	[self setPrimitiveLongitude:@(value_)];
 }
 
 @dynamic notes;

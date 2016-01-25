@@ -5,8 +5,8 @@
 
 extern const struct KCGLocationAttributes {
 	__unsafe_unretained NSString *address;
-	__unsafe_unretained NSString *latitud;
-	__unsafe_unretained NSString *longitud;
+	__unsafe_unretained NSString *latitude;
+	__unsafe_unretained NSString *longitude;
 } KCGLocationAttributes;
 
 extern const struct KCGLocationRelationships {
@@ -28,21 +28,21 @@ extern const struct KCGLocationRelationships {
 
 //- (BOOL)validateAddress:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSNumber* latitud;
+@property (nonatomic, strong) NSNumber* latitude;
 
-@property (atomic) double latitudValue;
-- (double)latitudValue;
-- (void)setLatitudValue:(double)value_;
+@property (atomic) double latitudeValue;
+- (double)latitudeValue;
+- (void)setLatitudeValue:(double)value_;
 
-//- (BOOL)validateLatitud:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateLatitude:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSNumber* longitud;
+@property (nonatomic, strong) NSNumber* longitude;
 
-@property (atomic) double longitudValue;
-- (double)longitudValue;
-- (void)setLongitudValue:(double)value_;
+@property (atomic) double longitudeValue;
+- (double)longitudeValue;
+- (void)setLongitudeValue:(double)value_;
 
-//- (BOOL)validateLongitud:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateLongitude:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSSet *notes;
 
@@ -63,17 +63,17 @@ extern const struct KCGLocationRelationships {
 - (NSString*)primitiveAddress;
 - (void)setPrimitiveAddress:(NSString*)value;
 
-- (NSNumber*)primitiveLatitud;
-- (void)setPrimitiveLatitud:(NSNumber*)value;
+- (NSNumber*)primitiveLatitude;
+- (void)setPrimitiveLatitude:(NSNumber*)value;
 
-- (double)primitiveLatitudValue;
-- (void)setPrimitiveLatitudValue:(double)value_;
+- (double)primitiveLatitudeValue;
+- (void)setPrimitiveLatitudeValue:(double)value_;
 
-- (NSNumber*)primitiveLongitud;
-- (void)setPrimitiveLongitud:(NSNumber*)value;
+- (NSNumber*)primitiveLongitude;
+- (void)setPrimitiveLongitude:(NSNumber*)value;
 
-- (double)primitiveLongitudValue;
-- (void)setPrimitiveLongitudValue:(double)value_;
+- (double)primitiveLongitudeValue;
+- (void)setPrimitiveLongitudeValue:(double)value_;
 
 - (NSMutableSet*)primitiveNotes;
 - (void)setPrimitiveNotes:(NSMutableSet*)value;

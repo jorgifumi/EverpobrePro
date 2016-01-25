@@ -1,5 +1,10 @@
 #import "_KCGLocation.h"
 
+@import CoreLocation;
+
 @interface KCGLocation : _KCGLocation {}
-// Custom logic goes here.
+
++ (instancetype)locationWithCLLocation:(CLLocation *)location
+                       forNote:(KCGNote *)note;
+
 @end

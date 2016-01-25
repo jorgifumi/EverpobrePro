@@ -82,7 +82,7 @@
     r.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:KCGNoteAttributes.name
                                                         ascending:YES
                                                          selector:@selector(caseInsensitiveCompare:)],
-                          [NSSortDescriptor sortDescriptorWithKey:KCGNoteAttributes.modificationDte
+                          [NSSortDescriptor sortDescriptorWithKey:KCGNoteAttributes.modificationDate
                                                         ascending:NO]];
     r.predicate = [NSPredicate predicateWithFormat:@"notebook == %@", nb];
     

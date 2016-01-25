@@ -50,7 +50,7 @@
     fmt.dateStyle = NSDateFormatterShortStyle;
     
     self.creationDateView.text = [fmt stringFromDate:self.model.creationDate];
-    self.modificationDateView.text = [fmt stringFromDate:self.model.modificationDte];
+    self.modificationDateView.text = [fmt stringFromDate:self.model.modificationDate];
     self.nameView.text = self.model.name;
     self.textView.text = self.model.text;
     

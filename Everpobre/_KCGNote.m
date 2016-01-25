@@ -5,7 +5,7 @@
 
 const struct KCGNoteAttributes KCGNoteAttributes = {
 	.creationDate = @"creationDate",
-	.modificationDte = @"modificationDte",
+	.modificationDate = @"modificationDate",
 	.name = @"name",
 	.text = @"text",
 };
@@ -47,7 +47,7 @@ const struct KCGNoteRelationships KCGNoteRelationships = {
 
 @dynamic creationDate;
 
-@dynamic modificationDte;
+@dynamic modificationDate;
 
 @dynamic name;
 

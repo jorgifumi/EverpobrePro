@@ -2,13 +2,13 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Xcode 7.0">
     <entity name="Location" representedClassName="KCGLocation" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="latitud" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="longitud" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" indexed="YES" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" indexed="YES" syncable="YES"/>
         <relationship name="notes" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="location" inverseEntity="Note" syncable="YES"/>
     </entity>
     <entity name="Note" representedClassName="KCGNote" syncable="YES">
         <attribute name="creationDate" attributeType="Date" indexed="YES" syncable="YES"/>
-        <attribute name="modificationDte" attributeType="Date" syncable="YES"/>
+        <attribute name="modificationDate" attributeType="Date" syncable="YES"/>
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="notes" inverseEntity="Location" syncable="YES"/>
