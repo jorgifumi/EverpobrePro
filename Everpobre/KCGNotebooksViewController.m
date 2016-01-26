@@ -10,6 +10,7 @@
 #import "KCGNotebook.h"
 #import "KCGNote.h"
 #import "KCGNotesTableViewController.h"
+#import "JLPNotesCollectionViewController.h"
 
 @interface KCGNotebooksViewController ()
 
@@ -19,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Everpobre";
+    self.title = @"Everpobre Pro";
     
     // Creamos botón de barra de +
     UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewNotebook:)];
@@ -84,6 +85,7 @@
                                                          selector:@selector(caseInsensitiveCompare:)],
                           [NSSortDescriptor sortDescriptorWithKey:KCGNoteAttributes.modificationDate
                                                         ascending:NO]];
+    
     r.predicate = [NSPredicate predicateWithFormat:@"notebook == %@", nb];
     
     
@@ -93,12 +95,20 @@
                                                                            sectionNameKeyPath:nil
                                                                                     cacheName:nil];
     
+    // Layout
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.itemSize = CGSizeMake(120, 150);
+    layout.minimumLineSpacing = 10;
+    layout.minimumInteritemSpacing = 10;
+    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
     // Crear el controlador
-    KCGNotesTableViewController *nVC = [[KCGNotesTableViewController alloc] initWithFetchedResultsController:fc
-                                                                                                       style:UITableViewStylePlain
-                                                                                                    notebook:nb];
-    
+//    KCGNotesTableViewController *nVC = [[KCGNotesTableViewController alloc] initWithFetchedResultsController:fc
+//                                                                                                       style:UITableViewStylePlain
+//                                                                                                    notebook:nb];
+    JLPNotesCollectionViewController *nVC = [JLPNotesCollectionViewController coreDataCollectionViewControllerWithFetchedResultsController:fc
+                                                                                                                                     layout:layout];
+
     
     // Pushearlo
     [self.navigationController pushViewController:nVC

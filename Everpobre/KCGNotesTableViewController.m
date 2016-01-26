@@ -20,11 +20,14 @@
 
 @implementation KCGNotesTableViewController
 
--(id) initWithFetchedResultsController:(NSFetchedResultsController *)aFetchedResultsController style:(UITableViewStyle)aStyle notebook:(KCGNotebook *) notebook{
+- (id)initWithFetchedResultsController:(NSFetchedResultsController *)aFetchedResultsController
+                                 style:(UITableViewStyle)aStyle
+                              notebook:(KCGNotebook *) notebook{
     if (self = [super initWithFetchedResultsController:aFetchedResultsController
                                                  style:aStyle]) {
         _notebook = notebook;
     }
+    self.title = notebook.name;
     
     return self;
 }

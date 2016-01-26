@@ -18,6 +18,10 @@
 		682BAE771C4D9FB900B97A3D /* AGTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682BAE761C4D9FB900B97A3D /* AGTCoreDataTableViewController.m */; };
 		682BAE7B1C4DA0E700B97A3D /* KCGNotebooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682BAE7A1C4DA0E700B97A3D /* KCGNotebooksViewController.m */; };
 		682BAE7F1C4DAA0E00B97A3D /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 682BAE7E1C4DAA0E00B97A3D /* UIViewController+Navigation.m */; };
+		682BB1041C581B1C00B1EEAD /* JLPNoteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 682BB1031C581B1C00B1EEAD /* JLPNoteCollectionViewCell.xib */; };
+		682BB1071C581C3200B1EEAD /* JLPNoteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 682BB1061C581C3200B1EEAD /* JLPNoteCollectionViewCell.m */; };
+		682BB10A1C581D6E00B1EEAD /* AGTCoreDataCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682BB1091C581D6E00B1EEAD /* AGTCoreDataCollectionViewController.m */; };
+		682BB10D1C581DC500B1EEAD /* JLPNotesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682BB10C1C581DC500B1EEAD /* JLPNotesCollectionViewController.m */; };
 		6852320E1C483A210007C484 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6852320D1C483A210007C484 /* main.m */; };
 		685232111C483A210007C484 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 685232101C483A210007C484 /* AppDelegate.m */; };
 		685232141C483A210007C484 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 685232131C483A210007C484 /* ViewController.m */; };
@@ -55,6 +59,13 @@
 		682BAE7A1C4DA0E700B97A3D /* KCGNotebooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCGNotebooksViewController.m; sourceTree = "<group>"; };
 		682BAE7D1C4DAA0E00B97A3D /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
 		682BAE7E1C4DAA0E00B97A3D /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
+		682BB1031C581B1C00B1EEAD /* JLPNoteCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JLPNoteCollectionViewCell.xib; sourceTree = "<group>"; };
+		682BB1051C581C3200B1EEAD /* JLPNoteCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLPNoteCollectionViewCell.h; sourceTree = "<group>"; };
+		682BB1061C581C3200B1EEAD /* JLPNoteCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLPNoteCollectionViewCell.m; sourceTree = "<group>"; };
+		682BB1081C581D6E00B1EEAD /* AGTCoreDataCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataCollectionViewController.h; sourceTree = "<group>"; };
+		682BB1091C581D6E00B1EEAD /* AGTCoreDataCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataCollectionViewController.m; sourceTree = "<group>"; };
+		682BB10B1C581DC500B1EEAD /* JLPNotesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLPNotesCollectionViewController.h; sourceTree = "<group>"; };
+		682BB10C1C581DC500B1EEAD /* JLPNotesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLPNotesCollectionViewController.m; sourceTree = "<group>"; };
 		685232091C483A210007C484 /* EverpobrePro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverpobrePro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6852320D1C483A210007C484 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6852320F1C483A210007C484 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -95,6 +106,8 @@
 		682BAE781C4D9FC100B97A3D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				682BB1081C581D6E00B1EEAD /* AGTCoreDataCollectionViewController.h */,
+				682BB1091C581D6E00B1EEAD /* AGTCoreDataCollectionViewController.m */,
 				682BAE751C4D9FB900B97A3D /* AGTCoreDataTableViewController.h */,
 				682BAE761C4D9FB900B97A3D /* AGTCoreDataTableViewController.m */,
 				682BAE791C4DA0E700B97A3D /* KCGNotebooksViewController.h */,
@@ -107,6 +120,8 @@
 				681DC11E1C52CBD700E9A371 /* KCGPhotoViewController.h */,
 				681DC11F1C52CBD700E9A371 /* KCGPhotoViewController.m */,
 				681DC1201C52CBD700E9A371 /* KCGPhotoViewController.xib */,
+				682BB10B1C581DC500B1EEAD /* JLPNotesCollectionViewController.h */,
+				682BB10C1C581DC500B1EEAD /* JLPNotesCollectionViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -118,6 +133,24 @@
 				682BAE7E1C4DAA0E00B97A3D /* UIViewController+Navigation.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		682BB1011C57C2EF00B1EEAD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				681DC1231C52CE2200E9A371 /* no-image-available.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		682BB1021C581AA000B1EEAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				682BB1031C581B1C00B1EEAD /* JLPNoteCollectionViewCell.xib */,
+				682BB1051C581C3200B1EEAD /* JLPNoteCollectionViewCell.h */,
+				682BB1061C581C3200B1EEAD /* JLPNoteCollectionViewCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		685232001C483A210007C484 = {
@@ -139,7 +172,8 @@
 		6852320B1C483A210007C484 /* EverpobrePro */ = {
 			isa = PBXGroup;
 			children = (
-				681DC1231C52CE2200E9A371 /* no-image-available.png */,
+				682BB1021C581AA000B1EEAD /* Views */,
+				682BB1011C57C2EF00B1EEAD /* Resources */,
 				682BAE7C1C4DA9CD00B97A3D /* Categories */,
 				682BAE781C4D9FC100B97A3D /* Controllers */,
 				685232231C483AA50007C484 /* Models */,
@@ -266,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				681DC1241C52CE2200E9A371 /* no-image-available.png in Resources */,
+				682BB1041C581B1C00B1EEAD /* JLPNoteCollectionViewCell.xib in Resources */,
 				6852321C1C483A210007C484 /* LaunchScreen.storyboard in Resources */,
 				681DC1221C52CBD700E9A371 /* KCGPhotoViewController.xib in Resources */,
 				685232191C483A210007C484 /* Assets.xcassets in Resources */,
@@ -288,9 +323,12 @@
 				682BAE7B1C4DA0E700B97A3D /* KCGNotebooksViewController.m in Sources */,
 				682BAE7F1C4DAA0E00B97A3D /* UIViewController+Navigation.m in Sources */,
 				685232111C483A210007C484 /* AppDelegate.m in Sources */,
+				682BB10A1C581D6E00B1EEAD /* AGTCoreDataCollectionViewController.m in Sources */,
 				685232291C4840DE0007C484 /* Everpobre.xcdatamodeld in Sources */,
+				682BB1071C581C3200B1EEAD /* JLPNoteCollectionViewCell.m in Sources */,
 				685232371C485C100007C484 /* _KCGNotebook.m in Sources */,
 				685232381C485C100007C484 /* _KCGPhoto.m in Sources */,
+				682BB10D1C581DC500B1EEAD /* JLPNotesCollectionViewController.m in Sources */,
 				6852323B1C485C100007C484 /* KCGPhoto.m in Sources */,
 				6852323A1C485C100007C484 /* KCGNotebook.m in Sources */,
 				685232361C485C100007C484 /* _KCGNote.m in Sources */,
