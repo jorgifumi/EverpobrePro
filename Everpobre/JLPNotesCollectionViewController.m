@@ -10,6 +10,7 @@
 #import "KCGNote.h"
 #import "JLPNoteCollectionViewCell.h"
 #import "KCGPhoto.h"
+#import "KCGNoteViewController.h"
 
 static NSString *cellId = @"NoteCellId";
 
@@ -61,6 +62,18 @@ static NSString *cellId = @"NoteCellId";
     
     // Return cell
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    // Obtener la nota
+    KCGNote *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    // Crear el controlador
+    KCGNoteViewController *nVC = [[KCGNoteViewController alloc] initWithModel:note];
+    
+    // Hacer el push
+    [self.navigationController pushViewController:nVC
+                                         animated:YES];
 }
 
 @end

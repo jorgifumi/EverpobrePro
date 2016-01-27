@@ -105,6 +105,10 @@
     // El controlador de tabla
     KCGNotebooksViewController *tVC = [[KCGNotebooksViewController alloc] initWithFetchedResultsController:fc style:UITableViewStylePlain];
     
+    
+    // TabBar Controller
+    
+    
     self.window.rootViewController = [tVC wrappedInNavigation];
     
     [self.window makeKeyAndVisible];
