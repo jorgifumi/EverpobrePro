@@ -56,4 +56,26 @@
     }
     
 }
+
+#pragma mark - MKAnnotation
+
+- (NSString *)title{
+    return @"I wrote a note here!";
+}
+
+- (NSString *)subtitle{
+    
+    NSArray *lines = [self.address componentsSeparatedByString:@"\n"];
+    NSMutableString *concat = [@"" mutableCopy];
+    for (NSString *line in lines) {
+        [concat appendFormat:@"%@ ", line];
+    }
+    return concat;
+}
+
+- (CLLocationCoordinate2D)coordinate{
+    
+    return CLLocationCoordinate2DMake(self.latitudeValue, self.longitudeValue);
+}
+
 @end

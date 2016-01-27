@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Everpobre/KCGLocation.m"
-            timestampString = "475436743.473276"
+            filePath = "Everpobre/AppDelegate.m"
+            timestampString = "475631269.218599"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "+locationWithCLLocation:forNote:"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "-createDummyData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

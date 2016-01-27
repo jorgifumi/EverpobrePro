@@ -22,6 +22,9 @@
 		682BB1071C581C3200B1EEAD /* JLPNoteCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 682BB1061C581C3200B1EEAD /* JLPNoteCollectionViewCell.m */; };
 		682BB10A1C581D6E00B1EEAD /* AGTCoreDataCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682BB1091C581D6E00B1EEAD /* AGTCoreDataCollectionViewController.m */; };
 		682BB10D1C581DC500B1EEAD /* JLPNotesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682BB10C1C581DC500B1EEAD /* JLPNotesCollectionViewController.m */; };
+		682BB1121C59738100B1EEAD /* JLPMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682BB1101C59738100B1EEAD /* JLPMapViewController.m */; };
+		682BB1131C59738100B1EEAD /* JLPMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 682BB1111C59738100B1EEAD /* JLPMapViewController.xib */; };
+		682BB1151C59757700B1EEAD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 682BB1141C59757700B1EEAD /* MapKit.framework */; };
 		6852320E1C483A210007C484 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6852320D1C483A210007C484 /* main.m */; };
 		685232111C483A210007C484 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 685232101C483A210007C484 /* AppDelegate.m */; };
 		685232141C483A210007C484 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 685232131C483A210007C484 /* ViewController.m */; };
@@ -66,6 +69,10 @@
 		682BB1091C581D6E00B1EEAD /* AGTCoreDataCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataCollectionViewController.m; sourceTree = "<group>"; };
 		682BB10B1C581DC500B1EEAD /* JLPNotesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLPNotesCollectionViewController.h; sourceTree = "<group>"; };
 		682BB10C1C581DC500B1EEAD /* JLPNotesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLPNotesCollectionViewController.m; sourceTree = "<group>"; };
+		682BB10F1C59738100B1EEAD /* JLPMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLPMapViewController.h; sourceTree = "<group>"; };
+		682BB1101C59738100B1EEAD /* JLPMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLPMapViewController.m; sourceTree = "<group>"; };
+		682BB1111C59738100B1EEAD /* JLPMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JLPMapViewController.xib; sourceTree = "<group>"; };
+		682BB1141C59757700B1EEAD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		685232091C483A210007C484 /* EverpobrePro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverpobrePro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6852320D1C483A210007C484 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6852320F1C483A210007C484 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				682BB1151C59757700B1EEAD /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +130,9 @@
 				681DC1201C52CBD700E9A371 /* KCGPhotoViewController.xib */,
 				682BB10B1C581DC500B1EEAD /* JLPNotesCollectionViewController.h */,
 				682BB10C1C581DC500B1EEAD /* JLPNotesCollectionViewController.m */,
+				682BB10F1C59738100B1EEAD /* JLPMapViewController.h */,
+				682BB1101C59738100B1EEAD /* JLPMapViewController.m */,
+				682BB1111C59738100B1EEAD /* JLPMapViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -156,6 +167,7 @@
 		685232001C483A210007C484 = {
 			isa = PBXGroup;
 			children = (
+				682BB1141C59757700B1EEAD /* MapKit.framework */,
 				6852320B1C483A210007C484 /* EverpobrePro */,
 				6852320A1C483A210007C484 /* Products */,
 			);
@@ -304,6 +316,7 @@
 				6852321C1C483A210007C484 /* LaunchScreen.storyboard in Resources */,
 				681DC1221C52CBD700E9A371 /* KCGPhotoViewController.xib in Resources */,
 				685232191C483A210007C484 /* Assets.xcassets in Resources */,
+				682BB1131C59738100B1EEAD /* JLPMapViewController.xib in Resources */,
 				681DC0EF1C51949600E9A371 /* KCGNoteViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,6 +337,7 @@
 				682BAE7F1C4DAA0E00B97A3D /* UIViewController+Navigation.m in Sources */,
 				685232111C483A210007C484 /* AppDelegate.m in Sources */,
 				682BB10A1C581D6E00B1EEAD /* AGTCoreDataCollectionViewController.m in Sources */,
+				682BB1121C59738100B1EEAD /* JLPMapViewController.m in Sources */,
 				685232291C4840DE0007C484 /* Everpobre.xcdatamodeld in Sources */,
 				682BB1071C581C3200B1EEAD /* JLPNoteCollectionViewCell.m in Sources */,
 				685232371C485C100007C484 /* _KCGNotebook.m in Sources */,

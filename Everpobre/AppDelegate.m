@@ -13,6 +13,9 @@
 #import "KCGNotebooksViewController.h"
 #import "UIViewController+Navigation.h"
 #import "Settings.h"
+#import "JLPMapViewController.h"
+#import "KCGLocation.h"
+#import <MapKit/MapKit.h> 
 
 @interface AppDelegate ()
 @property (strong, nonatomic) AGTCoreDataStack *model;
@@ -105,11 +108,32 @@
     // El controlador de tabla
     KCGNotebooksViewController *tVC = [[KCGNotebooksViewController alloc] initWithFetchedResultsController:fc style:UITableViewStylePlain];
     
+    UINavigationController *navVC = [tVC wrappedInNavigation];
+    navVC.tabBarItem.title = @"Lista";
+    
+    NSSet *notes = self.model.context.registeredObjects;
+    NSMutableArray<KCGLocation *> *locations = [NSMutableArray<KCGLocation *> new];
+    
+    for (KCGNote *note in notes) {
+        if (note.location) {
+            [locations addObject:note.location];
+        }
+        
+    }
+    
+    
+    // Map Controller
+    JLPMapViewController *mapVC = [[JLPMapViewController alloc] initWithLocation:locations.firstObject];
+    mapVC.tabBarItem.title = @"Mapa";
+
     
     // TabBar Controller
+    UITabBarController *tabVC = [[UITabBarController alloc] init];
     
     
-    self.window.rootViewController = [tVC wrappedInNavigation];
+    [tabVC setViewControllers:@[navVC, mapVC]];
+    
+    self.window.rootViewController = tabVC;
     
     [self.window makeKeyAndVisible];
     
