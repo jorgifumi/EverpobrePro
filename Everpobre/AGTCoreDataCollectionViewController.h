@@ -8,8 +8,10 @@
 //  https://github.com/AshFurrow/UICollectionView-NSFetchedResultsController
 //
 
-#import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
+@import Foundation;
+@import CoreData;
+@import UIKit;
+
 @interface AGTCoreDataCollectionViewController : UICollectionViewController
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
@@ -20,5 +22,6 @@
 
 -(id) initWithFetchedResultsController:(NSFetchedResultsController *) resultsController
                                 layout:(UICollectionViewLayout*) layout;
+
 
 @end

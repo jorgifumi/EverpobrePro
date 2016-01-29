@@ -7,17 +7,15 @@
 //
 
 #import "AGTCoreDataCollectionViewController.h"
-//#import "AGTDetailViewController.h"
+
 
 @interface AGTCoreDataCollectionViewController ()<NSFetchedResultsControllerDelegate>
 @property (strong, nonatomic) NSMutableArray *objectChanges;
 @property (strong, nonatomic) NSMutableArray *sectionChanges;
 
-
 @end
 
 @implementation AGTCoreDataCollectionViewController
-
 #pragma mark - Class Methods
 +(instancetype) coreDataCollectionViewControllerWithFetchedResultsController:(NSFetchedResultsController *) resultsController
                                                                       layout:(UICollectionViewLayout*) layout{
@@ -38,7 +36,7 @@
         _fetchedResultsController.delegate = self;
     }
     
-    return self;  
+    return self;
 }
 
 #pragma mark - View Lifecycle
@@ -54,7 +52,7 @@
         self.title = [NSString stringWithFormat:@"%@s",
                       self.fetchedResultsController.fetchRequest.entityName];
     }
-  
+    
     
 }
 
@@ -62,7 +60,7 @@
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return [[self.fetchedResultsController sections] count];
- 
+    
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -100,6 +98,9 @@
         case NSFetchedResultsChangeDelete:
             change[@(type)] = @(sectionIndex);
             break;
+        default:
+            // other 2 cases are irrelvant in this case
+            break;
     }
     
     [self.sectionChanges addObject:change];
@@ -113,7 +114,7 @@
 {
     // Todavía no le podemos pasar los cambios a la CollectionView,
     // así que los guardamos en un array.
-
+    
     NSMutableDictionary *change = [NSMutableDictionary new];
     switch(type)
     {
@@ -157,6 +158,10 @@
                             break;
                         case NSFetchedResultsChangeUpdate:
                             [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:[obj unsignedIntegerValue]]];
+                            break;
+                            
+                        default:
+                            // The other case is irrelevant in this scenario
                             break;
                     }
                 }];
@@ -254,21 +259,5 @@
     
 }
 
-//#pragma mark - Delegate
-//-(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-//    
-//    
-//    NSAssert(self.detailViewControllerClassName, @"You must set a detailViewController class name!");
-//    //Obtemeos el modelo
-//    id detailModel = [self.fetchedResultsController objectAtIndexPath:indexPath];
-//    
-//    //Creamos el controlador de detalle
-//    UIViewController<AGTDetailViewController> *detailVC = [[NSClassFromString(self.detailViewControllerClassName) alloc] initWithModel:detailModel];
-//    
-//    //Hacemos un push
-//    [self.navigationController pushViewController:detailVC animated:YES];
-//    
-//}
-//
 
 @end

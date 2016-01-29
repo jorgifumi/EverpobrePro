@@ -53,20 +53,20 @@
                  notebook:nbl
                   context:self.model.context];
     
-    // Buscar objetos
-    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[KCGNote entityName]];
-
-    req.fetchBatchSize = 25;
-    req.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:KCGNoteAttributes.name
-                                                          ascending:YES
-                                                           selector:@selector(caseInsensitiveCompare:)]];
-    
-    req.predicate = [NSPredicate predicateWithFormat:@"notebook == %@", nb];
-    
-    [self.model executeFetchRequest:req
-                         errorBlock:^(NSError *error) {
-                             NSLog(@"La cagaste, Burt Lancaster!");
-                         }];
+//    // Buscar objetos
+//    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[KCGNote entityName]];
+//
+//    req.fetchBatchSize = 25;
+//    req.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:KCGNoteAttributes.name
+//                                                          ascending:YES
+//                                                           selector:@selector(caseInsensitiveCompare:)]];
+//    
+//    req.predicate = [NSPredicate predicateWithFormat:@"notebook == %@", nb];
+//    
+//    [self.model executeFetchRequest:req
+//                         errorBlock:^(NSError *error) {
+//                             NSLog(@"La cagaste, Burt Lancaster!");
+//                         }];
     
     
     
@@ -111,10 +111,31 @@
     UINavigationController *navVC = [tVC wrappedInNavigation];
     navVC.tabBarItem.title = @"Lista";
     
-    NSSet *notes = self.model.context.registeredObjects;
+    // NSFetchRequest
+    NSFetchRequest *r2 = [NSFetchRequest fetchRequestWithEntityName:[KCGNote entityName]];
+    r2.fetchBatchSize = 25;
+    r2.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:KCGNoteAttributes.name
+                                                         ascending:YES
+                                                          selector:@selector(caseInsensitiveCompare:)]];
+    
+    // NSFetchedResultsController
+    NSFetchedResultsController *fc2 = [[NSFetchedResultsController alloc] initWithFetchRequest:r2 managedObjectContext:self.model.context sectionNameKeyPath:nil cacheName:nil];
+    
+
+    
+    [self.model executeFetchRequest:r2
+                         errorBlock:^(NSError *error) {
+                             NSLog(@"La cagaste, Burt Lancaster!");
+                         }];
+
+    
+    
     NSMutableArray<KCGLocation *> *locations = [NSMutableArray<KCGLocation *> new];
     
-    for (KCGNote *note in notes) {
+    NSLog(@"%@",[fc2 fetchedObjects]);
+    
+    for (KCGNote *note in [fc2 fetchedObjects]) {
+        NSLog(@"%@", note.name);
         if (note.location) {
             [locations addObject:note.location];
         }

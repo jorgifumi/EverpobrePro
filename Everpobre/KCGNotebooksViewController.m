@@ -109,6 +109,8 @@
     JLPNotesCollectionViewController *nVC = [JLPNotesCollectionViewController coreDataCollectionViewControllerWithFetchedResultsController:fc
                                                                                                                                      layout:layout];
 
+    // Assign notebook property
+    nVC.notebook = nb;
     
     // Pushearlo
     [self.navigationController pushViewController:nVC

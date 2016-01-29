@@ -8,4 +8,4 @@
 
 #define AUTO_SAVE YES
 #define AUTOSAVE_DELAY 5
-#define ADD_DUMMY_DATA YES
+#define ADD_DUMMY_DATA NO

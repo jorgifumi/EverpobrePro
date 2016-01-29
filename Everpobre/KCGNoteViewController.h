@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class KCGNote;
+@class KCGNotebook;
 
 @interface KCGNoteViewController : UIViewController
 
--(id) initWithModel: (KCGNote *) model;
+- (id)initWithModel: (KCGNote *) model;
+
+- (id)initForNewNoteInNotebook:(KCGNotebook *)notebook;
+
 @end

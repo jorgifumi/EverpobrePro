@@ -8,6 +8,7 @@
 
 #import "JLPNotesCollectionViewController.h"
 #import "KCGNote.h"
+#import "KCGNotebook.h"
 #import "JLPNoteCollectionViewCell.h"
 #import "KCGPhoto.h"
 #import "KCGNoteViewController.h"
@@ -20,6 +21,22 @@ static NSString *cellId = @"NoteCellId";
 
 @implementation JLPNotesCollectionViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // Creamos botón de barra de +
+    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewNote:)];
+    
+    // Lo añadimos
+    self.navigationItem.rightBarButtonItem = btn;
+}
+
+- (void) addNewNote:(id)sender {
+    
+    KCGNoteViewController *newNoteVC = [[KCGNoteViewController alloc] initForNewNoteInNotebook:self.notebook];
+    [self.navigationController pushViewController:newNoteVC
+                                         animated:YES];
+}
 
 #pragma mark - View Life Cylce
 

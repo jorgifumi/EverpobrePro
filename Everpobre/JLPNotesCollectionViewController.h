@@ -8,6 +8,9 @@
 
 #import "AGTCoreDataCollectionViewController.h"
 
+@class KCGNotebook;
+
 @interface JLPNotesCollectionViewController : AGTCoreDataCollectionViewController
 
+@property (nonatomic, strong) KCGNotebook *notebook;
 @end

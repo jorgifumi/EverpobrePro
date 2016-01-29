@@ -9,6 +9,7 @@
 #import "KCGNoteViewController.h"
 #import "KCGNote.h"
 #import "KCGPhotoViewController.h"
+#import "KCGNotebook.h"
 
 @interface KCGNoteViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *creationDateView;
@@ -20,6 +21,8 @@
 - (IBAction)displayPhoto:(id)sender;
 
 @property (strong, nonatomic) KCGNote *model;
+@property (nonatomic) BOOL new;
+@property (nonatomic) BOOL deleteNote ;
 
 @property (nonatomic) CGRect oldFrame;
 @property (nonatomic) double animationDuration;
@@ -31,13 +34,23 @@
 
 #pragma mark - Initialization
 
--(id) initWithModel: (KCGNote *) model{
+- (id)initWithModel:(KCGNote *)model {
     if (self = [super initWithNibName:nil
                                bundle:nil]) {
         _model = model;
     }
     
+    _new = YES;
     return self;
+}
+
+- (id)initForNewNoteInNotebook:(KCGNotebook *)notebook {
+    
+    KCGNote *newNote = [KCGNote noteWithName:@""
+                                    notebook:notebook
+                                     context:notebook.managedObjectContext];
+
+    return [self initWithModel:newNote];
 }
 
 #pragma mark - Life cycle
@@ -54,16 +67,29 @@
     self.nameView.text = self.model.name;
     self.textView.text = self.model.text;
     
-    // Alta en notificaciones del tecldo
+    // Alta en notificaciones del teclado
     [self startObservingKeyboard];
+    
+    if (self.new) {
+        // Show cancel button
+        UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                target:self
+                                                                                action:@selector(cancel:)];
+        self.navigationItem.rightBarButtonItem = cancel;
+    }
 }
 
 -(void) viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     
-    // Sincronizamos vistas -> modelo
-    self.model.text = self.textView.text;
-    self.model.name = self.nameView.text;
+    if (self.deleteNote) {
+        
+        [self.model.managedObjectContext deleteObject:self.model];
+    }else{
+        // Sincronizamos vistas -> modelo
+        self.model.text = self.textView.text;
+        self.model.name = self.nameView.text;
+    }
     
     // Baja de notificaciones del teclado
     [self stopObservingKeyboard];
@@ -147,6 +173,13 @@
 - (IBAction)removeKeyboard:(id)sender{
 
     [self.view endEditing:YES];
+}
+
+#pragma mark - Utils
+- (void)cancel:(id)sender {
+    self.deleteNote = YES;
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 @end
