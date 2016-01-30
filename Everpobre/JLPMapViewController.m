@@ -11,24 +11,36 @@
 
 
 @interface JLPMapViewController ()
-@property (nonatomic, strong) KCGLocation *model;
+@property (nonatomic, strong) NSArray<KCGLocation *>*model;
 @end
 
 @implementation JLPMapViewController
 
-- (id)initWithLocation:(KCGLocation *)location{
+//- (id)initWithLocation:(KCGLocation *)location{
+//    if (self = [super initWithNibName:nil
+//                               bundle:nil]) {
+//        _model = location;
+//    }
+//    return self;
+//}
+
+- (id)initWithLocations:(NSArray<KCGLocation *>*)locations{
     if (self = [super initWithNibName:nil
                                bundle:nil]) {
-        _model = location;
+        _model = locations;
     }
     return self;
-}
+    }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     // Pass to mapView
-    [self.mapView addAnnotation:self.model];
+    for (KCGLocation *location in self.model) {
+        [self.mapView addAnnotation:location];
+
+    }
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {

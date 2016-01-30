@@ -23,56 +23,6 @@
 
 @implementation AppDelegate
 
-- (void)createDummyData {
-    
-    // Creo libretas
-    KCGNotebook *nb = [KCGNotebook notebookWithName:@"Ex novias para el recuerdo"
-                                            context:self.model.context];
-    
-    KCGNotebook *nbl = [KCGNotebook notebookWithName:@"Lugares raros donde he estado"
-                                            context:self.model.context];
-
-    
-    [KCGNote noteWithName:@"Pampita"
-                                    notebook:nb
-                                     context:self.model.context];
-    
-    [KCGNote noteWithName:@"Camila Dávalos"
-                                   notebook:nb
-                                    context:self.model.context];
-    
-    [KCGNote noteWithName:@"Mariana Dávalos"
-                                   notebook:nb
-                                    context:self.model.context];
-    
-    [KCGNote noteWithName:@"Tatooine"
-                 notebook:nbl
-                  context:self.model.context];
-    
-    [KCGNote noteWithName:@"Parla"
-                 notebook:nbl
-                  context:self.model.context];
-    
-//    // Buscar objetos
-//    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[KCGNote entityName]];
-//
-//    req.fetchBatchSize = 25;
-//    req.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:KCGNoteAttributes.name
-//                                                          ascending:YES
-//                                                           selector:@selector(caseInsensitiveCompare:)]];
-//    
-//    req.predicate = [NSPredicate predicateWithFormat:@"notebook == %@", nb];
-//    
-//    [self.model executeFetchRequest:req
-//                         errorBlock:^(NSError *error) {
-//                             NSLog(@"La cagaste, Burt Lancaster!");
-//                         }];
-    
-    
-    
-}
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Inicializando el stack
@@ -83,6 +33,9 @@
         [self.model zapAllData];
         [self createDummyData];
     }
+    
+    // Iniciamos el inspector del contexto
+    [self printContextState];
     
     // Arranca el autosave
     if (AUTO_SAVE) {
@@ -111,40 +64,43 @@
     UINavigationController *navVC = [tVC wrappedInNavigation];
     navVC.tabBarItem.title = @"Lista";
     
-    // NSFetchRequest
-    NSFetchRequest *r2 = [NSFetchRequest fetchRequestWithEntityName:[KCGNote entityName]];
-    r2.fetchBatchSize = 25;
-    r2.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:KCGNoteAttributes.name
-                                                         ascending:YES
-                                                          selector:@selector(caseInsensitiveCompare:)]];
-    
-    // NSFetchedResultsController
-    NSFetchedResultsController *fc2 = [[NSFetchedResultsController alloc] initWithFetchRequest:r2 managedObjectContext:self.model.context sectionNameKeyPath:nil cacheName:nil];
-    
-
-    
-    [self.model executeFetchRequest:r2
-                         errorBlock:^(NSError *error) {
-                             NSLog(@"La cagaste, Burt Lancaster!");
-                         }];
-
-    
-    
+//    // NSFetchRequest
+//    NSFetchRequest *r2 = [NSFetchRequest fetchRequestWithEntityName:[KCGNote entityName]];
+//    r2.fetchBatchSize = 25;
+//    r2.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:KCGNoteAttributes.name
+//                                                         ascending:YES
+//                                                          selector:@selector(caseInsensitiveCompare:)]];
+//    [self.model executeFetchRequest:r2
+//                         errorBlock:^(NSError *error) {
+//                             NSLog(@"La cagaste, Burt Lancaster!");
+//                         }];
+//
+//    // NSFetchedResultsController
+//    NSFetchedResultsController *fc2 = [[NSFetchedResultsController alloc] initWithFetchRequest:r2 managedObjectContext:self.model.context sectionNameKeyPath:nil cacheName:nil];
+//    
+//
+//    
+//    
+//    
+//    
     NSMutableArray<KCGLocation *> *locations = [NSMutableArray<KCGLocation *> new];
     
-    NSLog(@"%@",[fc2 fetchedObjects]);
+//    NSLog(@"%@",[fc fetchedObjects]);
     
-    for (KCGNote *note in [fc2 fetchedObjects]) {
-        NSLog(@"%@", note.name);
-        if (note.location) {
-            [locations addObject:note.location];
+    for (KCGNotebook *notebook in [fc fetchedObjects]) {
+        NSLog(@"%@", notebook.name);
+        for (KCGNote *note in notebook.notes) {
+            NSLog(@"%@", note.name);
+            if (note.location) {
+                [locations addObject:note.location];
+            }
         }
         
     }
     
     
     // Map Controller
-    JLPMapViewController *mapVC = [[JLPMapViewController alloc] initWithLocation:locations.firstObject];
+    JLPMapViewController *mapVC = [[JLPMapViewController alloc] initWithLocations:locations];
     mapVC.tabBarItem.title = @"Mapa";
 
     
@@ -209,6 +165,89 @@
     
 }
 
+
+#pragma mark - Utils
+
+- (void)createDummyData {
+    
+    // Creo libretas
+    KCGNotebook *nb = [KCGNotebook notebookWithName:@"Ex novias para el recuerdo"
+                                            context:self.model.context];
+    
+    KCGNotebook *nbl = [KCGNotebook notebookWithName:@"Lugares raros donde he estado"
+                                             context:self.model.context];
+    
+    
+    [KCGNote noteWithName:@"Pampita"
+                 notebook:nb
+                  context:self.model.context];
+    
+    [KCGNote noteWithName:@"Camila Dávalos"
+                 notebook:nb
+                  context:self.model.context];
+    
+    [KCGNote noteWithName:@"Mariana Dávalos"
+                 notebook:nb
+                  context:self.model.context];
+    
+    [KCGNote noteWithName:@"Tatooine"
+                 notebook:nbl
+                  context:self.model.context];
+    
+    [KCGNote noteWithName:@"Parla"
+                 notebook:nbl
+                  context:self.model.context];
+    
+    //    // Buscar objetos
+    //    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[KCGNote entityName]];
+    //
+    //    req.fetchBatchSize = 25;
+    //    req.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:KCGNoteAttributes.name
+    //                                                          ascending:YES
+    //                                                           selector:@selector(caseInsensitiveCompare:)]];
+    //
+    //    req.predicate = [NSPredicate predicateWithFormat:@"notebook == %@", nb];
+    //
+    //    [self.model executeFetchRequest:req
+    //                         errorBlock:^(NSError *error) {
+    //                             NSLog(@"La cagaste, Burt Lancaster!");
+    //                         }];
+    
+    
+    
+}
+
+-(void) printContextState{
+    
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[KCGNotebook entityName]];
+    NSUInteger numNotebooks = [[self.model executeFetchRequest:req
+                                                errorBlock:nil] count];
+    
+    req = [NSFetchRequest fetchRequestWithEntityName:[KCGNote entityName]];
+    NSUInteger numNotes = [[self.model executeFetchRequest:req
+                                            errorBlock:nil] count];
+    
+    req = [NSFetchRequest fetchRequestWithEntityName:[KCGLocation entityName]];
+    NSUInteger numLocations = [[self.model executeFetchRequest:req
+                                                errorBlock:nil] count];
+    
+//    req = [NSFetchRequest fetchRequestWithEntityName:[AGTMapSnapshot entityName]];
+//    NSUInteger numSnapshots = [[self.model executeFetchRequest:req
+//                                                errorBlock:nil] count];
+    
+    printf("----------------------------------------------------\n");
+    printf("Total number of objects:    %lu\n", (unsigned long)self.model.context.registeredObjects.count);
+    printf("Number of notebooks:        %lu\n", (unsigned long)numNotebooks);
+    printf("Number of notes:            %lu\n", (unsigned long)numNotes);
+    printf("Number of locations:        %lu\n", (unsigned long)numLocations);
+//    printf("Number of snapshots:        %lu\n", (unsigned long)numSnapshots);
+    printf("----------------------------------------------------\n\n\n");
+    
+    [self performSelector:@selector(printContextState)
+               withObject:nil
+               afterDelay:5];
+    
+}
 
 
 @end

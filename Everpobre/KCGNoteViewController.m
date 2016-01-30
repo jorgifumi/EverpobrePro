@@ -34,7 +34,7 @@
 
 #pragma mark - Initialization
 
-- (id)initWithModel:(KCGNote *)model {
+- (id)initWithModel:(KCGNote *)model{
     if (self = [super initWithNibName:nil
                                bundle:nil]) {
         _model = model;
@@ -44,7 +44,7 @@
     return self;
 }
 
-- (id)initForNewNoteInNotebook:(KCGNotebook *)notebook {
+- (id)initForNewNoteInNotebook:(KCGNotebook *)notebook{
     
     KCGNote *newNote = [KCGNote noteWithName:@""
                                     notebook:notebook
@@ -162,7 +162,7 @@
 }
 
 #pragma mark - Actions
-- (IBAction)displayPhoto:(id)sender {
+- (IBAction)displayPhoto:(id)sender{
     
     KCGPhotoViewController *pVC = [[KCGPhotoViewController alloc] initWithModel:self.model];
     
@@ -176,7 +176,7 @@
 }
 
 #pragma mark - Utils
-- (void)cancel:(id)sender {
+- (void)cancel:(id)sender{
     self.deleteNote = YES;
     [self.navigationController popViewControllerAnimated:YES];
     

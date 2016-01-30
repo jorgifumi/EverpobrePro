@@ -27,7 +27,6 @@
 		682BB1151C59757700B1EEAD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 682BB1141C59757700B1EEAD /* MapKit.framework */; };
 		6852320E1C483A210007C484 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6852320D1C483A210007C484 /* main.m */; };
 		685232111C483A210007C484 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 685232101C483A210007C484 /* AppDelegate.m */; };
-		685232141C483A210007C484 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 685232131C483A210007C484 /* ViewController.m */; };
 		685232191C483A210007C484 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685232181C483A210007C484 /* Assets.xcassets */; };
 		6852321C1C483A210007C484 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6852321A1C483A210007C484 /* LaunchScreen.storyboard */; };
 		685232261C483ACF0007C484 /* AGTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 685232251C483ACF0007C484 /* AGTCoreDataStack.m */; };
@@ -77,8 +76,6 @@
 		6852320D1C483A210007C484 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6852320F1C483A210007C484 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		685232101C483A210007C484 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		685232121C483A210007C484 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		685232131C483A210007C484 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		685232181C483A210007C484 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6852321B1C483A210007C484 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6852321D1C483A210007C484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -191,8 +188,6 @@
 				685232231C483AA50007C484 /* Models */,
 				6852320F1C483A210007C484 /* AppDelegate.h */,
 				685232101C483A210007C484 /* AppDelegate.m */,
-				685232121C483A210007C484 /* ViewController.h */,
-				685232131C483A210007C484 /* ViewController.m */,
 				685232181C483A210007C484 /* Assets.xcassets */,
 				6852321A1C483A210007C484 /* LaunchScreen.storyboard */,
 				6852321D1C483A210007C484 /* Info.plist */,
@@ -331,7 +326,6 @@
 				681DC1281C52F06E00E9A371 /* _KCGLocation.m in Sources */,
 				685232391C485C100007C484 /* KCGNote.m in Sources */,
 				681DC1211C52CBD700E9A371 /* KCGPhotoViewController.m in Sources */,
-				685232141C483A210007C484 /* ViewController.m in Sources */,
 				682BAE771C4D9FB900B97A3D /* AGTCoreDataTableViewController.m in Sources */,
 				682BAE7B1C4DA0E700B97A3D /* KCGNotebooksViewController.m in Sources */,
 				682BAE7F1C4DAA0E00B97A3D /* UIViewController+Navigation.m in Sources */,

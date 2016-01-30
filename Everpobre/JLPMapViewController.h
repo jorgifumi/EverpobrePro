@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 
-- (id)initWithLocation:(KCGLocation *)location;
+//- (id)initWithLocation:(KCGLocation *)location;
+
+- (id)initWithLocations:(NSArray<KCGLocation *>*)locations;
 
 @end

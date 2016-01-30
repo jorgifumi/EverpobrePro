@@ -41,14 +41,19 @@
     // Se llama solo una vez
     [self setupKVO];
     
-    [self.locationManager requestWhenInUseAuthorization];
+
+//    [self.locationManager requestWhenInUseAuthorization];
+//    
+//    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+//    if ((status == kCLAuthorizationStatusAuthorizedWhenInUse) || (status == kCLAuthorizationStatusNotDetermined)) {
     
-    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
-    if ((status == kCLAuthorizationStatusAuthorizedWhenInUse) || (status == kCLAuthorizationStatusNotDetermined)) {
-        
-        
         self.locationManager = [CLLocationManager new];
         self.locationManager.delegate = self;
+        
+        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            [self.locationManager requestWhenInUseAuthorization];
+        }
+        
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         [self.locationManager startUpdatingLocation];
         
@@ -56,7 +61,7 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self zapLocationManager];
         });
-    }
+//    }
 }
 
 - (void)awakeFromFetch{
