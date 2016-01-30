@@ -77,15 +77,8 @@
 //
 //    // NSFetchedResultsController
 //    NSFetchedResultsController *fc2 = [[NSFetchedResultsController alloc] initWithFetchRequest:r2 managedObjectContext:self.model.context sectionNameKeyPath:nil cacheName:nil];
-//    
-//
-//    
-//    
-//    
-//    
+
     NSMutableArray<KCGLocation *> *locations = [NSMutableArray<KCGLocation *> new];
-    
-//    NSLog(@"%@",[fc fetchedObjects]);
     
     for (KCGNotebook *notebook in [fc fetchedObjects]) {
         NSLog(@"%@", notebook.name);

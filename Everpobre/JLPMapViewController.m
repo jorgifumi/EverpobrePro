@@ -16,13 +16,15 @@
 
 @implementation JLPMapViewController
 
-//- (id)initWithLocation:(KCGLocation *)location{
-//    if (self = [super initWithNibName:nil
-//                               bundle:nil]) {
-//        _model = location;
-//    }
-//    return self;
-//}
+#pragma mark - Init
+
+- (id)initWithFetchedResultsController:(NSFetchedResultsController *)aFetchedResultsController{
+    if (self = [super init]) {
+        self.fetchedResultsController = aFetchedResultsController;
+    }
+    return self;
+}
+
 
 - (id)initWithLocations:(NSArray<KCGLocation *>*)locations{
     if (self = [super initWithNibName:nil
@@ -48,17 +50,55 @@
     // Asig region and animate
 }
 
+#pragma mark - Fetching
+
+- (void)performFetch
+{
+    if (self.fetchedResultsController) {
+        NSError *error;
+        [self.fetchedResultsController performFetch:&error];
+        if (error) NSLog(@"[%@ %@] %@ (%@)", NSStringFromClass([self class]), NSStringFromSelector(_cmd), [error localizedDescription], [error localizedFailureReason]);
+    }
+    
+}
+
+- (void)setFetchedResultsController:(NSFetchedResultsController *)newfrc
+{
+    NSFetchedResultsController *oldfrc = _fetchedResultsController;
+    if (newfrc != oldfrc) {
+        _fetchedResultsController = newfrc;
+        //newfrc.delegate = self;
+        if ((!self.title || [self.title isEqualToString:oldfrc.fetchRequest.entity.name]) && (!self.navigationController || !self.navigationItem.title)) {
+            self.title = newfrc.fetchRequest.entity.name;
+        }
+        if (newfrc) {
+            [self performFetch];
+        } else {
+            //[self.tableView reloadData];
+        }
+    }
+}
+
+
+
 #pragma mark - Actions
 
 - (IBAction)standardMap:(id)sender {
+    self.mapView.mapType = MKMapTypeStandard;
 }
 
 - (IBAction)satelliteMap:(id)sender {
+    self.mapView.mapType = MKMapTypeSatellite;
 }
 
 - (IBAction)hybridMap:(id)sender {
+    self.mapView.mapType = MKMapTypeHybrid;
 }
 
 #pragma mark - MKMapDelegate
+
+
+
+#pragma mark - NSFetchedResultsControllerDelegate
 
 @end

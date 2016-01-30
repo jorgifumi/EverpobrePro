@@ -177,7 +177,9 @@
 
 #pragma mark - Utils
 - (void)cancel:(id)sender{
-    self.deleteNote = YES;
+    if (self.new) {
+        self.deleteNote = YES;
+    }
     [self.navigationController popViewControllerAnimated:YES];
     
 }

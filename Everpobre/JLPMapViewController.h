@@ -7,7 +7,8 @@
 //
 
 @import UIKit;
-@import MapKit;
+@import CoreData;
+#import <MapKit/MapKit.h>
 
 @class KCGLocation;
 
@@ -17,9 +18,9 @@
 - (IBAction)hybridMap:(id)sender;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
-
-//- (id)initWithLocation:(KCGLocation *)location;
+- (id)initWithFetchedResultsController:(NSFetchedResultsController *)aFetchedResultsController;
 
 - (id)initWithLocations:(NSArray<KCGLocation *>*)locations;
 

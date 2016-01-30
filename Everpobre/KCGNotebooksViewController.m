@@ -27,6 +27,9 @@
     
     // Lo añadimos
     self.navigationItem.rightBarButtonItem = btn;
+    
+    // Ponemos el botón de edición
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 - (void) addNewNotebook:(id) sender {
@@ -40,7 +43,21 @@
     // Dispose of any resources that can be recreated.
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+#pragma mark - Datasource
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+  
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Averiguar de que libreta nos esta hablando
+        KCGNotebook *del = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        
+        //Quitarla del modelo
+        [self.fetchedResultsController.managedObjectContext deleteObject:del];
+        
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     static NSString *cellID = @"NotebookCell";
     
