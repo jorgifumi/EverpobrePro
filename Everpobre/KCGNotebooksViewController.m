@@ -114,10 +114,10 @@
     
     // Layout
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake(120, 150);
+    layout.itemSize = CGSizeMake(100, 150);
     layout.minimumLineSpacing = 10;
     layout.minimumInteritemSpacing = 10;
-    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    layout.sectionInset = UIEdgeInsetsMake(15, 15, 15, 15);
     
     // Crear el controlador
 //    KCGNotesTableViewController *nVC = [[KCGNotesTableViewController alloc] initWithFetchedResultsController:fc

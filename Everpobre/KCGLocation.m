@@ -29,13 +29,14 @@
         
         KCGLocation *found = [results lastObject];
         [found addNotesObject:note];
-        
+
         return found;
     }else{
         KCGLocation *loc = [self insertInManagedObjectContext:note.managedObjectContext];
-        
+        loc.latitudeValue = location.coordinate.latitude;
+        loc.longitudeValue = location.coordinate.longitude;
         [loc addNotesObject:note];
-        
+
         // Address
         CLGeocoder *coder = [CLGeocoder new];
         [coder reverseGeocodeLocation:location

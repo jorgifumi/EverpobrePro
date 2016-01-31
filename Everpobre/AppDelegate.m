@@ -69,6 +69,8 @@
     locReq.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:KCGLocationAttributes.address
                                                              ascending:YES
                                                               selector:@selector(caseInsensitiveCompare:)]];
+//    NSArray<KCGLocation *> *locations = [self.model executeFetchRequest:locReq
+//                                                    errorBlock:nil];
 
     NSFetchedResultsController *locFc = [[NSFetchedResultsController alloc] initWithFetchRequest:locReq
                                                                             managedObjectContext:self.model.context
