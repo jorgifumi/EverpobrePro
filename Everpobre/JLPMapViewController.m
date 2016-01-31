@@ -20,7 +20,7 @@
 
 - (id)initWithFetchedResultsController:(NSFetchedResultsController *)aFetchedResultsController{
     if (self = [super init]) {
-        self.fetchedResultsController = aFetchedResultsController;
+        _fetchedResultsController = aFetchedResultsController;
     }
     return self;
 }
@@ -40,7 +40,7 @@
     [super viewWillAppear:animated];
     
     // Pass to mapView
-    [self.mapView addAnnotations:self.model];
+    [self syncView];
 
 }
 
@@ -49,6 +49,16 @@
     // Asig region and animate
     self.mapView.centerCoordinate = self.model.firstObject.coordinate;
     
+}
+
+- (void)syncView{
+    [self.mapView removeAnnotations:self.model];
+    NSError *error;
+    [self.fetchedResultsController performFetch:&error];
+    if (error) NSLog(@"[%@ %@] %@ (%@)", NSStringFromClass([self class]), NSStringFromSelector(_cmd), [error localizedDescription], [error localizedFailureReason]);
+
+    self.model = self.fetchedResultsController.fetchedObjects;
+    [self.mapView addAnnotations:self.model];
 }
 
 

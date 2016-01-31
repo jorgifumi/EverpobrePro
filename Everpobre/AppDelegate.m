@@ -65,14 +65,20 @@
     navVC.tabBarItem.title = @"Lista";
     
 
-    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[KCGLocation entityName]];
-    NSArray<KCGLocation *> *locations = [self.model executeFetchRequest:req
-                                                    errorBlock:nil];
+    NSFetchRequest *locReq = [NSFetchRequest fetchRequestWithEntityName:[KCGLocation entityName]];
+    locReq.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:KCGLocationAttributes.address
+                                                             ascending:YES
+                                                              selector:@selector(caseInsensitiveCompare:)]];
 
+    NSFetchedResultsController *locFc = [[NSFetchedResultsController alloc] initWithFetchRequest:locReq
+                                                                            managedObjectContext:self.model.context
+                                                                              sectionNameKeyPath:nil
+                                                                                       cacheName:nil];
     
     // Map Controller
-    JLPMapViewController *mapVC = [[JLPMapViewController alloc] initWithLocations:locations];
+    JLPMapViewController *mapVC = [[JLPMapViewController alloc] initWithFetchedResultsController:locFc];
     mapVC.tabBarItem.title = @"Mapa";
+    //mapVC.tabBarItem.image =
 
     
     // TabBar Controller
