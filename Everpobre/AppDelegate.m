@@ -64,33 +64,11 @@
     UINavigationController *navVC = [tVC wrappedInNavigation];
     navVC.tabBarItem.title = @"Lista";
     
-//    // NSFetchRequest
-//    NSFetchRequest *r2 = [NSFetchRequest fetchRequestWithEntityName:[KCGNote entityName]];
-//    r2.fetchBatchSize = 25;
-//    r2.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:KCGNoteAttributes.name
-//                                                         ascending:YES
-//                                                          selector:@selector(caseInsensitiveCompare:)]];
-//    [self.model executeFetchRequest:r2
-//                         errorBlock:^(NSError *error) {
-//                             NSLog(@"La cagaste, Burt Lancaster!");
-//                         }];
-//
-//    // NSFetchedResultsController
-//    NSFetchedResultsController *fc2 = [[NSFetchedResultsController alloc] initWithFetchRequest:r2 managedObjectContext:self.model.context sectionNameKeyPath:nil cacheName:nil];
 
-    NSMutableArray<KCGLocation *> *locations = [NSMutableArray<KCGLocation *> new];
-    
-    for (KCGNotebook *notebook in [fc fetchedObjects]) {
-        NSLog(@"%@", notebook.name);
-        for (KCGNote *note in notebook.notes) {
-            NSLog(@"%@", note.name);
-            if (note.location) {
-                [locations addObject:note.location];
-            }
-        }
-        
-    }
-    
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[KCGLocation entityName]];
+    NSArray<KCGLocation *> *locations = [self.model executeFetchRequest:req
+                                                    errorBlock:nil];
+
     
     // Map Controller
     JLPMapViewController *mapVC = [[JLPMapViewController alloc] initWithLocations:locations];

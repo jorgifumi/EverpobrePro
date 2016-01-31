@@ -31,6 +31,8 @@
                                bundle:nil]) {
         _model = locations;
     }
+    
+    
     return self;
     }
 
@@ -45,6 +47,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     // Asig region and animate
+    self.mapView.centerCoordinate = self.model.firstObject.coordinate;
+    
 }
 
 
