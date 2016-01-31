@@ -47,8 +47,9 @@ static NSString *cellId = @"NoteCellId";
     
     self.collectionView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
     
-    self.title = @"Notas";
+    self.title = self.notebook.name; //@"Notas";
 }
+
 
 #pragma mark - Xib registration
 
@@ -86,7 +87,7 @@ static NSString *cellId = @"NoteCellId";
     KCGNote *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     // Crear el controlador
-    KCGNoteViewController *nVC = [[KCGNoteViewController alloc] initWithModel:note];
+    KCGNoteViewController *nVC = [[KCGNoteViewController alloc] initWithModel:note isNew:NO];
     
     // Hacer el push
     [self.navigationController pushViewController:nVC

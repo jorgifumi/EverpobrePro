@@ -39,6 +39,14 @@
     [self syncWithNote];
 }
 
+- (void)unObserveNote:(KCGNote *)note{
+    for (NSString *key in [JLPNoteCollectionViewCell observableKeys]) {
+        [self.note removeObserver:self forKeyPath:key];
+    }
+
+    
+}
+
 - (void)syncWithNote{
     
     self.titleView.text = self.note.name;
@@ -65,11 +73,14 @@
 }
 
 - (void)prepareForReuse{
-    
+    [self unObserveNote:self.note];
     self.note = nil;
     [self syncWithNote];
     
 }
 
+- (void)dealloc{
+    [self unObserveNote:self.note];
+}
 
 @end

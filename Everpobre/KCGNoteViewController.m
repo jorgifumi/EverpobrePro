@@ -26,7 +26,7 @@
 
 @property (nonatomic) CGRect oldFrame;
 @property (nonatomic) double animationDuration;
-@property (nonatomic) BOOL isKeybordVisible;
+@property (nonatomic) BOOL isKeyboardVisible;
 
 @end
 
@@ -34,13 +34,15 @@
 
 #pragma mark - Initialization
 
-- (id)initWithModel:(KCGNote *)model{
+- (id)initWithModel:(KCGNote *)model
+                isNew:(BOOL)new{
     if (self = [super initWithNibName:nil
                                bundle:nil]) {
         _model = model;
+        _new = new;
     }
     
-    _new = YES;
+    
     return self;
 }
 
@@ -50,7 +52,7 @@
                                     notebook:notebook
                                      context:notebook.managedObjectContext];
 
-    return [self initWithModel:newNote];
+    return [self initWithModel:newNote isNew:YES];
 }
 
 #pragma mark - Life cycle
@@ -76,6 +78,12 @@
                                                                                 target:self
                                                                                 action:@selector(cancel:)];
         self.navigationItem.rightBarButtonItem = cancel;
+    }else{
+        // Show delete button
+        UIBarButtonItem *delete = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash
+                                                                                target:self
+                                                                                action:@selector(delete:)];
+        self.navigationItem.rightBarButtonItem = delete;
     }
 }
 
@@ -117,9 +125,9 @@
 
 - (void)keyboardWillAppear:(NSNotification *)note{
 
-    if (!self.isKeybordVisible) {
+    if (!self.isKeyboardVisible) {
         
-        self.isKeybordVisible = YES;
+        self.isKeyboardVisible = YES;
         NSDictionary *info = note.userInfo;
         
         self.animationDuration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
@@ -158,7 +166,7 @@
                          self.textView.frame = newFrame;
                      }];
     
-    self.isKeybordVisible = NO;
+    self.isKeyboardVisible = NO;
 }
 
 #pragma mark - Actions
@@ -183,5 +191,12 @@
     [self.navigationController popViewControllerAnimated:YES];
     
 }
+
+- (void)delete:(id)sender{
+    self.deleteNote = YES;
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
 
 @end

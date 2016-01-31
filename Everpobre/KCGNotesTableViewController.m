@@ -84,7 +84,7 @@
     KCGNote *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     // Crear el controlador
-    KCGNoteViewController *nVC = [[KCGNoteViewController alloc] initWithModel:note];
+    KCGNoteViewController *nVC = [[KCGNoteViewController alloc] initWithModel:note isNew:NO];
     
     // Hacer el push
     [self.navigationController pushViewController:nVC

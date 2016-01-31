@@ -13,7 +13,7 @@
 
 @interface KCGNoteViewController : UIViewController
 
-- (id)initWithModel: (KCGNote *) model;
+- (id)initWithModel:(KCGNote *)model isNew:(BOOL)new;
 
 - (id)initForNewNoteInNotebook:(KCGNotebook *)notebook;
 

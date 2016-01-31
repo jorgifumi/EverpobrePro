@@ -38,10 +38,7 @@
     [super viewWillAppear:animated];
     
     // Pass to mapView
-    for (KCGLocation *location in self.model) {
-        [self.mapView addAnnotation:location];
-
-    }
+    [self.mapView addAnnotations:self.model];
 
 }
 
@@ -49,36 +46,6 @@
     [super viewDidAppear:animated];
     // Asig region and animate
 }
-
-#pragma mark - Fetching
-
-- (void)performFetch
-{
-    if (self.fetchedResultsController) {
-        NSError *error;
-        [self.fetchedResultsController performFetch:&error];
-        if (error) NSLog(@"[%@ %@] %@ (%@)", NSStringFromClass([self class]), NSStringFromSelector(_cmd), [error localizedDescription], [error localizedFailureReason]);
-    }
-    
-}
-
-- (void)setFetchedResultsController:(NSFetchedResultsController *)newfrc
-{
-    NSFetchedResultsController *oldfrc = _fetchedResultsController;
-    if (newfrc != oldfrc) {
-        _fetchedResultsController = newfrc;
-        //newfrc.delegate = self;
-        if ((!self.title || [self.title isEqualToString:oldfrc.fetchRequest.entity.name]) && (!self.navigationController || !self.navigationItem.title)) {
-            self.title = newfrc.fetchRequest.entity.name;
-        }
-        if (newfrc) {
-            [self performFetch];
-        } else {
-            //[self.tableView reloadData];
-        }
-    }
-}
-
 
 
 #pragma mark - Actions
@@ -95,10 +62,5 @@
     self.mapView.mapType = MKMapTypeHybrid;
 }
 
-#pragma mark - MKMapDelegate
-
-
-
-#pragma mark - NSFetchedResultsControllerDelegate
 
 @end
